@@ -163,6 +163,8 @@ body {
 .cart{
     color: white;
     display: flex;
+    position: relative;
+    align-items: center;
 }
 .cart_quantity_count{
     margin-top: 16px;
@@ -170,6 +172,10 @@ body {
     margin-left: 27px;
     position: absolute;
     font-size: 29px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 1;
 
 }
 .plantname_heading{

@@ -8,6 +8,10 @@ function ProductList({ onHomeClick }) {
   const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
 
   const cartItems = useSelector((state) => state.cart.items);
+  const cartItemCount = cartItems.reduce(
+    (total, item) => total + (item.quantity || 0),
+    0,
+  );
 
   const dispatch = useDispatch();
 
@@ -329,6 +333,9 @@ function ProductList({ onHomeClick }) {
             {" "}
             <a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
               <h1 className="cart">
+                {cartItemCount > 0 && (
+                  <span className="cart_quantity_count">{cartItemCount}</span>
+                )}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 256 256"
